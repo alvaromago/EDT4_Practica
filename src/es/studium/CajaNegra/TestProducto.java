@@ -18,11 +18,22 @@ class TestProducto
     }
     
     @Test
-    public void aplicarDescuento_invalido() 
+    public void aplicarDescuento_invalido1() 
     {
         Producto producto = new Producto();
         producto.setPrecio(100);
         producto.aplicarDescuento(-20);
+        double resultadoReal = producto.getPrecio();
+        int resultadoEsperado = 100;
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+    
+    @Test
+    public void aplicarDescuento_invalido2() 
+    {
+        Producto producto = new Producto();
+        producto.setPrecio(100);
+        producto.aplicarDescuento(200);
         double resultadoReal = producto.getPrecio();
         int resultadoEsperado = 100;
         assertEquals(resultadoEsperado, resultadoReal);
