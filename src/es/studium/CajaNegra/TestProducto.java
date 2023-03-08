@@ -12,7 +12,9 @@ class TestProducto
         Producto producto = new Producto();
         producto.setPrecio(100);
         producto.aplicarDescuento(20);
-        assertEquals(80, producto.getPrecio(), 0.001);
+        double resultadoReal = producto.getPrecio();
+        int resultadoEsperado = 80;
+        assertEquals(resultadoEsperado, resultadoReal);
     }
     
     @Test
@@ -21,7 +23,9 @@ class TestProducto
         Producto producto = new Producto();
         producto.setPrecio(100);
         producto.aplicarDescuento(-20);
-        assertEquals(100, producto.getPrecio(), 0.001);
+        double resultadoReal = producto.getPrecio();
+        int resultadoEsperado = 100;
+        assertEquals(resultadoEsperado, resultadoReal);
     }
     
     @Test
@@ -29,7 +33,9 @@ class TestProducto
     {
         Producto producto = new Producto();
         producto.setPrecio(100);
-        assertEquals(100, producto.getPrecio(), 0.001);
+        double resultadoReal = producto.getPrecio();
+        double resultadoEsperado = 100;
+        assertEquals(resultadoEsperado, resultadoReal);
     }
     
     @Test
@@ -37,7 +43,9 @@ class TestProducto
     {
         Producto producto = new Producto();
         producto.setPrecio(-100);
-        assertEquals(0, producto.getPrecio(), 0.001);
+        double resultadoReal = producto.getPrecio();
+        double resultadoEsperado = 0;
+        assertEquals(resultadoEsperado, resultadoReal);
     }
     
     @Test
@@ -45,7 +53,9 @@ class TestProducto
     {
         Producto producto = new Producto();
         producto.setIVA(10);
-        assertEquals(10, producto.getIVA());
+        int resultadoReal = producto.getIVA();
+        int resultadoEsperado = 10;
+        assertEquals(resultadoEsperado, resultadoReal);
     }
     
     @Test
@@ -53,6 +63,8 @@ class TestProducto
     {
         Producto producto = new Producto();
         producto.setIVA(-10);
-        assertEquals(21, producto.getIVA());
+        int resultadoReal = producto.getIVA();
+        int resultadoEsperado = 21;
+        assertEquals(resultadoEsperado, resultadoReal);
     }
 }
