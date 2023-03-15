@@ -60,12 +60,32 @@ class TestProducto
     }
     
     @Test
-    public void setIVA_valido() 
+    public void setIVA_valido1() 
     {
         Producto producto = new Producto();
         producto.setIVA(10);
         int resultadoReal = producto.getIVA();
         int resultadoEsperado = 10;
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+    
+    @Test
+    public void setIVA_valido2() 
+    {
+        Producto producto = new Producto();
+        producto.setIVA(21);
+        int resultadoReal = producto.getIVA();
+        int resultadoEsperado = 21;
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+    
+    @Test
+    public void setIVA_valido3() 
+    {
+        Producto producto = new Producto();
+        producto.setIVA(4);
+        int resultadoReal = producto.getIVA();
+        int resultadoEsperado = 4;
         assertEquals(resultadoEsperado, resultadoReal);
     }
     
